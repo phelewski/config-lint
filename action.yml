@@ -1,0 +1,16 @@
+---
+ name: 'Stelligent config-lint'
+ description: Execute config-lint against the code in the repository where the GitHub Action workflow is run.
+ branding:
+   icon: search
+   color: orange
+ inputs:
+   parser:
+     description: 'foo'
+     default: '-terraform'
+   input_path:
+     description: 'bar'
+     default: 'example-files/config/s3.tf'
+ runs:
+   using: docker
+   image: github-action/Dockerfile

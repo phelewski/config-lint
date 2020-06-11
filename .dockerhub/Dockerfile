@@ -1,3 +1,3 @@
-FROM scratch
+FROM ubuntu
 COPY config-lint /
-ENTRYPOINT ["/config-lint"] 
+ENTRYPOINT ["sh", "-c", "./config-lint"] 
