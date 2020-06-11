@@ -1,10 +1,10 @@
 FROM phelewski/config-lint:v0.0.2
 
-ARG PARSER=''
-ENV PARSER="${PARSER}"
+ARG INPUT_PARSER=''
+ENV INPUT_PARSER="${INPUT_PARSER}"
 
-ARG INPUT_PATH=''
-ENV INPUT_PATH="${INPUT_PATH}"
+ARG INPUT_INPUT_PATH=''
+ENV INPUT_INPUT_PATH="${INPUT_INPUT_PATH}"
 
 RUN apt-get update \
     && apt-get install -y curl
@@ -13,4 +13,4 @@ RUN curl -L https://github.com/stelligent/config-lint/releases/latest/download/c
     && chmod +rx /usr/local/bin/config-lint
 
 COPY . .
-ENTRYPOINT [ "sh", "-c", "/usr/local/bin/config-lint $PARSER $INPUT_PATH" ]
+ENTRYPOINT [ "sh", "-c", "/usr/local/bin/config-lint $INPUT_PARSER $INPUT_INPUT_PATH" ]
