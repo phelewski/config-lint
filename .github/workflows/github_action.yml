@@ -1,0 +1,25 @@
+---
+name: Github Action
+
+on:
+  push:
+    branches:
+      # - master
+      - feature/204_github_action
+    paths:
+      - .github/workflows/github_action.yml
+      - action.yml
+      - .github/actions/**
+
+jobs:
+  e2e:
+    name: E2E test
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@master
+      - name: Simple test
+        uses: phelewski/config-lint@feature/204_github_action
+        with:
+          parser: -terraform
+          input_path: example-files/config/s3.tf
