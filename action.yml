@@ -13,4 +13,4 @@
      default: 'example-files/config/s3.tf'
  runs:
    using: docker
-   image: github-action/Dockerfile
+   image: .github/actions/Dockerfile
