@@ -4,6 +4,7 @@ on:
   push:
     branches-ignore:
       - 'master'
+      - 'feature/204_github_action'
     tags-ignore:
       - '**'
     paths-ignore:
